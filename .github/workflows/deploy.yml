@@ -2,7 +2,7 @@ name: Deployment
 on:
   push:
     branches:
-      - main
+      - master
       - dev
 env:
   MONGODB_DB_NAME: 'give database name here'
@@ -17,7 +17,7 @@ jobs:
       PORT: XYZ
     steps:
       - name: Get Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
