@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     env:
       MONGODB_CLUSTER_ADDRESS: 'give cluster address here'
-      MONGODB_USERNAME: 'give username here'
-      MONGODB_PASSWORD: 'give password here'
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
       PORT: XYZ
     steps:
       - name: Get Code
-        uses: actions/checkout@v
+        uses: actions/checkout@v3
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
